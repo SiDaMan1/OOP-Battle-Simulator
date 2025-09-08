@@ -51,6 +51,23 @@ def main():
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
+
+    if hero.is_alive():
+        print("boss time")
+        boss_witch= witch("big bad witch")
+
+        while hero.is_alive() and boss_witch.is_alive():
+            damage = hero.strike()
+            boss_witch.take_damage(damage)
+
+            boss_damage = boss_witch.attack()
+            hero.receive_damage(boss_damage)
+
+        if hero.is_alive():
+            print(f"\nThe hero has defeated the witch boss! ༼ ᕤ◕◡◕ ༽ᕤ")
+        else:
+            print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")    
+
     # Final tally of goblins defeated
     print(f"\nTotal goblins defeated: {defeated_goblins} / {len(goblins)}")
 
