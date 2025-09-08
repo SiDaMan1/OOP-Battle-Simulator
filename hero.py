@@ -16,7 +16,7 @@ class Hero:
     
     def __init__(self, name):
         self.name = name
-        self.health = 1000
+        self.health = 3000
         self.attack_power = 10
         #TODO Set the hero's name.
         #TODO Set the hero's health. You might give the hero more health than a goblin.
@@ -30,7 +30,7 @@ class Hero:
     def receive_damage(self, damage):
         if self.health > 0:
             self.health -= damage
-        
+        print("hero takes: " + str(damage)+ " damage. " + "health is now: " + str(self.health) )
         # TODO Implement take_damage
         # TODO We should prevent health from going into the NEGATIVE
     
